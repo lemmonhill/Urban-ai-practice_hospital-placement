@@ -216,6 +216,8 @@ class ApiChecks(unittest.TestCase):
         self.assertTrue(meta["validation"]["passed"])
         self.assertEqual(meta["blocks"], 4441)
         self.assertEqual(meta["total_demand"], 6240)
+        self.assertEqual(meta["demand_linear_total"], 4194)
+        self.assertEqual(meta["demand_rounding"], "ceil по каждому кварталу")
         blocks = self.client.get("/api/blocks.geojson").get_json()
         self.assertEqual(len(blocks["features"]), 4441)
         roads = self.client.get("/api/roads.geojson").get_json()

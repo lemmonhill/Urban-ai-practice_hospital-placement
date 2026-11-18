@@ -342,7 +342,7 @@ function renderKpis() {
     {
       label: "Расчётная потребность в местах",
       value: fmtInt(state.meta.total_demand),
-      sub: `${state.meta.demand_per_1000} мест на 1000 жителей`,
+      sub: `${state.meta.demand_per_1000} мест на 1000 жителей; округление вверх по кварталам (линейно — ${fmtInt(state.meta.demand_linear_total)})`,
     },
     {
       label: "Вместимость сети больниц",

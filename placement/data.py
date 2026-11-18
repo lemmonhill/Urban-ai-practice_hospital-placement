@@ -392,6 +392,8 @@ def metadata(bundle: DataBundle) -> dict[str, Any]:
         "blocks": int(len(bundle.blocks)),
         "population_total": float(bundle.population.sum()),
         "total_demand": bundle.total_demand,
+        "demand_linear_total": int(math.ceil(float(bundle.population.sum()) / 1000.0 * bundle.demand_norm)),
+        "demand_rounding": "ceil по каждому кварталу",
         "total_capacity": bundle.total_capacity,
         "baseline_deficit": bundle.baseline_deficit,
         "baseline_provision": bundle.baseline_provision,
@@ -413,6 +415,7 @@ def metadata(bundle: DataBundle) -> dict[str, Any]:
             "Доступность измеряется только по пешеходному графу; автомобильное и общественное время в пути не учитывается.",
             "Новая больница добавляет вместимость в выбранном квартале; земельный участок и возможность строительства не оцениваются.",
             "Обеспеченность считается конкурирующим методом competitive_provision с нормативом 9 мест на 1000 жителей и доступностью 60 минут.",
+            "Потребность каждого квартала округляется вверх по формуле BlocksNet ceil(население / 1000 × 9), поэтому сумма по кварталам (6 240) больше линейного расчёта от общей численности (4 194).",
             "Итоговые сценарии пересчитываются штатной функцией BlocksNet. Векторизованная LP-реализация используется для проверок и сверки; суммарный дефицит при нескольких оптимальных распределениях совпадает.",
         ],
     }
