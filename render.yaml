@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: hospital-placement
+    runtime: docker
+    plan: free
+    region: frankfurt
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - key: HOSPITAL_PLACEMENT_VALIDATE_BLOCKSNET
+        value: "0"
+      - key: MALLOC_ARENA_MAX
+        value: "2"

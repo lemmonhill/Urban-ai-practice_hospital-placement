@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Размещение больниц — Астрахань</title>
+  <link rel="stylesheet" href="/static/vendor/leaflet/leaflet.css">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <h1>Оценка размещения новых больниц</h1>
+      <p>Астрахань · обеспеченность населения местами в стационарах · практика 2 / BlocksNet</p>
+    </div>
+    <div class="top-badges">
+      <span class="badge badge-blue" id="methodBadge">Расчёт: загрузка…</span>
+      <span class="badge badge-green" id="validationBadge">Сверка: загрузка…</span>
+    </div>
+  </header>
+
+  <main class="layout">
+    <aside class="sidebar">
+      <section class="panel">
+        <h2>Режим карты</h2>
+        <div class="segmented" id="mapMode">
+          <button type="button" data-mode="original" class="active">Исходное состояние</button>
+          <button type="button" data-mode="scenario">Сценарий</button>
+          <button type="button" data-mode="change">Изменение</button>
+        </div>
+        <div class="legend" id="legend"></div>
+      </section>
+
+      <section class="panel">
+        <h2>Выбранный квартал</h2>
+        <div id="selectedCard" class="selected-card muted">Нажмите на квартал на карте</div>
+      </section>
+
+      <section class="panel">
+        <h2>Ручной сценарий</h2>
+        <p class="hint">Выберите квартал на карте, укажите вместимость новой больницы в местах и добавьте её в сценарий. В сценарии может быть несколько кварталов.</p>
+        <div class="form-row">
+          <label>Квартал</label>
+          <input type="text" id="manualBlock" readonly placeholder="не выбран">
+        </div>
+        <div class="form-row">
+          <label>Вместимость, мест</label>
+          <input type="number" id="manualCapacity" min="1" step="1" value="600">
+        </div>
+        <div class="button-row">
+          <button type="button" class="btn btn-secondary" id="addHospital">Добавить в сценарий</button>
+        </div>
+        <div id="plannedHospitals" class="planned-list muted">Новые больницы не заданы</div>
+        <div class="button-row">
+          <button type="button" class="btn btn-primary" id="calculateScenario">Рассчитать сценарий</button>
+          <button type="button" class="btn btn-ghost" id="resetScenario">Сбросить</button>
+        </div>
+        <div class="status" id="scenarioStatus"></div>
+      </section>
+
+      <section class="panel">
+        <h2>Автоматический подбор</h2>
+        <p class="hint">Проверяются все кварталы: одна больница заданной вместимости добавляется в каждый квартал независимо, затем пересчитывается обеспеченность всей территории. Исходные население и больницы не зависят от текущего сценария.</p>
+        <div class="form-row">
+          <label>Вместимость новой больницы, мест</label>
+          <input type="number" id="autoCapacity" min="1" step="1" value="600">
+        </div>
+        <div class="button-row">
+          <button type="button" class="btn btn-primary" id="autoSearch">Разместить автоматически</button>
+        </div>
+        <div class="progress-wrap" id="autoProgressWrap" hidden>
+          <div class="progress"><div class="progress-bar" id="autoProgressBar"></div></div>
+          <div class="status" id="autoProgressText"></div>
+        </div>
+        <div class="status" id="autoStatus"></div>
+        <div id="autoBest" class="auto-best" hidden></div>
+      </section>
+
+      <section class="panel">
+        <h2>Сохранённые сценарии</h2>
+        <div class="form-row">
+          <label>Название</label>
+          <input type="text" id="scenarioName" placeholder="например, больница в квартале 4195">
+        </div>
+        <div class="button-row">
+          <button type="button" class="btn btn-secondary" id="saveScenario">Сохранить текущий сценарий</button>
+        </div>
+        <div id="savedScenarios" class="saved-list muted">Сценариев пока нет</div>
+      </section>
+
+      <section class="panel">
+        <h2>Источники и допущения</h2>
+        <div id="sourcesBlock" class="sources"></div>
+      </section>
+    </aside>
+
+    <section class="content">
+      <div class="kpis" id="kpis"></div>
+
+      <div class="map-card">
+        <div id="map"></div>
+        <div class="map-note">
+          Границы кварталов практики 2 и локальная подложка OpenStreetMap (улицы и вода), без внешних запросов. Расчёт обеспеченности — конкурентный, с пешеходной доступностью 60 минут.
+        </div>
+      </div>
+
+      <div class="panel results-panel">
+        <div class="tabs" id="resultTabs">
+          <button type="button" data-tab="blocks" class="active">Результаты по кварталам</button>
+          <button type="button" data-tab="auto">Варианты автоподбора</button>
+          <button type="button" data-tab="compare">Сравнение сценариев</button>
+        </div>
+
+        <div class="tab-page active" id="tab-blocks">
+          <div class="table-toolbar">
+            <input type="search" id="blockFilter" placeholder="Фильтр по номеру квартала">
+            <span class="hint" id="blockTableInfo"></span>
+            <button type="button" class="btn btn-ghost" id="exportBlocks">Экспорт CSV</button>
+          </div>
+          <div class="table-scroll">
+            <table class="data-table" id="blocksTable">
+              <thead></thead>
+              <tbody></tbody>
+            </table>
+          </div>
+          <div class="pager" id="blockPager"></div>
+        </div>
+
+        <div class="tab-page" id="tab-auto">
+          <div class="table-toolbar">
+            <span class="hint" id="autoTableInfo">Автоподбор ещё не запускался</span>
+            <input type="search" id="autoFilter" placeholder="Фильтр по номеру квартала">
+            <button type="button" class="btn btn-ghost" id="exportAuto" disabled>Экспорт CSV</button>
+          </div>
+          <div class="table-scroll">
+            <table class="data-table" id="autoTable">
+              <thead></thead>
+              <tbody></tbody>
+            </table>
+          </div>
+          <div class="pager" id="autoPager"></div>
+        </div>
+
+        <div class="tab-page" id="tab-compare">
+          <p class="hint">Отметьте сохранённые сценарии для сравнения. Показатели пересчитаны тем же методом на исходных населении и матрице доступности.</p>
+          <div id="compareChecklist" class="compare-checklist muted">Сохранённых сценариев нет</div>
+          <div class="table-scroll">
+            <table class="data-table" id="compareTable">
+              <thead></thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="toast" id="toast" hidden></div>
+
+  <script src="/static/vendor/leaflet/leaflet.js"></script>
+  <script src="/static/app.js"></script>
+</body>
+</html>

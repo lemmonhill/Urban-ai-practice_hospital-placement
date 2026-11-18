@@ -1,0 +1,824 @@
+{
+  "baseline": {
+    "total_demand": 6240,
+    "total_capacity": 4730.0,
+    "total_demand_within": 4694.0,
+    "deficit": 1546.0,
+    "provision_total": 0.7522435897435897
+  },
+  "auto": {
+    "capacity": 600,
+    "checked": 4441,
+    "total": 4441,
+    "errors": 0,
+    "complete": true,
+    "best_reduction": 594,
+    "best_blocks": [
+      321,
+      467,
+      468,
+      469,
+      470,
+      471,
+      472,
+      473,
+      474,
+      475,
+      477,
+      478,
+      482,
+      483,
+      484,
+      488,
+      489,
+      490,
+      494,
+      497,
+      499,
+      500,
+      518
+    ],
+    "best_count": 23,
+    "method": "ortools_min_cost_flow_scaled_weights"
+  },
+  "comparison": [
+    {
+      "scenario": "A",
+      "hospitals": [
+        {
+          "block_id": 3871,
+          "capacity": 600
+        }
+      ],
+      "capacity_added": 600,
+      "total_capacity": 5330.0,
+      "deficit": 1227.0,
+      "deficit_reduction": 319.0,
+      "deficit_reduction_share": 0.20633893919793014,
+      "provision_total": 0.8033653846153846,
+      "blocks_improved": 296,
+      "blocks_with_remaining_deficit": 1175
+    },
+    {
+      "scenario": "B",
+      "hospitals": [
+        {
+          "block_id": 3871,
+          "capacity": 300
+        },
+        {
+          "block_id": 4195,
+          "capacity": 300
+        }
+      ],
+      "capacity_added": 600,
+      "total_capacity": 5330.0,
+      "deficit": 1146.0,
+      "deficit_reduction": 400.0,
+      "deficit_reduction_share": 0.258732212160414,
+      "provision_total": 0.8163461538461538,
+      "blocks_improved": 362,
+      "blocks_with_remaining_deficit": 1109
+    },
+    {
+      "scenario": "C",
+      "hospitals": [
+        {
+          "block_id": 321,
+          "capacity": 600
+        }
+      ],
+      "capacity_added": 600,
+      "total_capacity": 5330.0,
+      "deficit": 952.0,
+      "deficit_reduction": 594.0,
+      "deficit_reduction_share": 0.38421733505821476,
+      "provision_total": 0.8474358974358974,
+      "blocks_improved": 574,
+      "blocks_with_remaining_deficit": 897
+    }
+  ],
+  "scenarios": {
+    "A": {
+      "title": "Одна больница на 600 мест в квартале 3871",
+      "reason": "Квартал 3871 — наибольший собственный дефицит (10 мест) среди кварталов в пределах 10 км от центра спроса; он находится в северо-восточной части города.",
+      "hospitals": [
+        {
+          "block_id": 3871,
+          "capacity": 600
+        }
+      ],
+      "summary": {
+        "baseline_deficit": 1546.0,
+        "baseline_provision_total": 0.7522435897435897,
+        "capacity_added": 600,
+        "capacity_added_by_block": {
+          "3871": 600
+        },
+        "capacity_left": 317.0,
+        "deficit": 1227.0,
+        "deficit_reduction": 319.0,
+        "deficit_reduction_share": 0.20633893919793014,
+        "provision_total": 0.8033653846153846,
+        "total_capacity": 5330.0,
+        "total_demand": 6240,
+        "total_demand_within": 5013.0,
+        "blocks_improved": 296,
+        "blocks_with_remaining_deficit": 1175,
+        "top_improved": [
+          {
+            "block_id": 956,
+            "provision_original": 0.0,
+            "provision_scenario": 1.0,
+            "provision_change": 1.0,
+            "deficit_scenario": 0.0
+          },
+          {
+            "block_id": 2481,
+            "provision_original": 0.0,
+            "provision_scenario": 1.0,
+            "provision_change": 1.0,
+            "deficit_scenario": 0.0
+          },
+          {
+            "block_id": 2486,
+            "provision_original": 0.0,
+            "provision_scenario": 1.0,
+            "provision_change": 1.0,
+            "deficit_scenario": 0.0
+          },
+          {
+            "block_id": 2489,
+            "provision_original": 0.0,
+            "provision_scenario": 1.0,
+            "provision_change": 1.0,
+            "deficit_scenario": 0.0
+          },
+          {
+            "block_id": 2490,
+            "provision_original": 0.0,
+            "provision_scenario": 1.0,
+            "provision_change": 1.0,
+            "deficit_scenario": 0.0
+          },
+          {
+            "block_id": 2491,
+            "provision_original": 0.0,
+            "provision_scenario": 1.0,
+            "provision_change": 1.0,
+            "deficit_scenario": 0.0
+          },
+          {
+            "block_id": 2494,
+            "provision_original": 0.0,
+            "provision_scenario": 1.0,
+            "provision_change": 1.0,
+            "deficit_scenario": 0.0
+          },
+          {
+            "block_id": 2526,
+            "provision_original": 0.0,
+            "provision_scenario": 1.0,
+            "provision_change": 1.0,
+            "deficit_scenario": 0.0
+          },
+          {
+            "block_id": 2527,
+            "provision_original": 0.0,
+            "provision_scenario": 1.0,
+            "provision_change": 1.0,
+            "deficit_scenario": 0.0
+          },
+          {
+            "block_id": 2529,
+            "provision_original": 0.0,
+            "provision_scenario": 1.0,
+            "provision_change": 1.0,
+            "deficit_scenario": 0.0
+          },
+          {
+            "block_id": 2530,
+            "provision_original": 0.0,
+            "provision_scenario": 1.0,
+            "provision_change": 1.0,
+            "deficit_scenario": 0.0
+          },
+          {
+            "block_id": 2532,
+            "provision_original": 0.0,
+            "provision_scenario": 1.0,
+            "provision_change": 1.0,
+            "deficit_scenario": 0.0
+          },
+          {
+            "block_id": 2533,
+            "provision_original": 0.0,
+            "provision_scenario": 1.0,
+            "provision_change": 1.0,
+            "deficit_scenario": 0.0
+          },
+          {
+            "block_id": 2534,
+            "provision_original": 0.0,
+            "provision_scenario": 1.0,
+            "provision_change": 1.0,
+            "deficit_scenario": 0.0
+          },
+          {
+            "block_id": 2535,
+            "provision_original": 0.0,
+            "provision_scenario": 1.0,
+            "provision_change": 1.0,
+            "deficit_scenario": 0.0
+          }
+        ],
+        "top_remaining_deficit": [
+          {
+            "block_id": 4195,
+            "population": 1224.0681992012408,
+            "deficit_scenario": 12.0,
+            "provision_scenario": 0.0
+          },
+          {
+            "block_id": 2485,
+            "population": 558.031552812805,
+            "deficit_scenario": 6.0,
+            "provision_scenario": 0.0
+          },
+          {
+            "block_id": 4204,
+            "population": 476.6860292062611,
+            "deficit_scenario": 5.0,
+            "provision_scenario": 0.0
+          },
+          {
+            "block_id": 30,
+            "population": 366.3243261807636,
+            "deficit_scenario": 4.0,
+            "provision_scenario": 0.0
+          },
+          {
+            "block_id": 224,
+            "population": 330.5527309585628,
+            "deficit_scenario": 3.0,
+            "provision_scenario": 0.0
+          },
+          {
+            "block_id": 4336,
+            "population": 188.7179150845393,
+            "deficit_scenario": 2.0,
+            "provision_scenario": 0.0
+          },
+          {
+            "block_id": 1486,
+            "population": 186.44392342738985,
+            "deficit_scenario": 2.0,
+            "provision_scenario": 0.0
+          },
+          {
+            "block_id": 689,
+            "population": 186.11291135936614,
+            "deficit_scenario": 2.0,
+            "provision_scenario": 0.0
+          },
+          {
+            "block_id": 90,
+            "population": 185.57866582671838,
+            "deficit_scenario": 2.0,
+            "provision_scenario": 0.0
+          },
+          {
+            "block_id": 640,
+            "population": 183.81659234302214,
+            "deficit_scenario": 2.0,
+            "provision_scenario": 0.0
+          },
+          {
+            "block_id": 177,
+            "population": 182.17526213309625,
+            "deficit_scenario": 2.0,
+            "provision_scenario": 0.0
+          },
+          {
+            "block_id": 657,
+            "population": 181.83163235397177,
+            "deficit_scenario": 2.0,
+            "provision_scenario": 0.0
+          },
+          {
+            "block_id": 1593,
+            "population": 181.34935891364853,
+            "deficit_scenario": 2.0,
+            "provision_scenario": 0.0
+          },
+          {
+            "block_id": 1603,
+            "population": 170.72675234117617,
+            "deficit_scenario": 2.0,
+            "provision_scenario": 0.0
+          },
+          {
+            "block_id": 386,
+            "population": 164.16279650899278,
+            "deficit_scenario": 2.0,
+            "provision_scenario": 0.0
+          }
+        ]
+      }
+    },
+    "B": {
+      "title": "Две больницы по 300 мест в кварталах 3871 и 4195",
+      "reason": "Два крупнейших локальных дефицита в пределах 15 км от центра спроса: 4195 (12 мест, северо-запад) и 3871 (10 мест, северо-восток); вместимость разделена между двумя полюсами дефицита.",
+      "hospitals": [
+        {
+          "block_id": 3871,
+          "capacity": 300
+        },
+        {
+          "block_id": 4195,
+          "capacity": 300
+        }
+      ],
+      "summary": {
+        "baseline_deficit": 1546.0,
+        "baseline_provision_total": 0.7522435897435897,
+        "capacity_added": 600,
+        "capacity_added_by_block": {
+          "3871": 300,
+          "4195": 300
+        },
+        "capacity_left": 236.0,
+        "deficit": 1146.0,
+        "deficit_reduction": 400.0,
+        "deficit_reduction_share": 0.258732212160414,
+        "provision_total": 0.8163461538461538,
+        "total_capacity": 5330.0,
+        "total_demand": 6240,
+        "total_demand_within": 5094.0,
+        "blocks_improved": 362,
+        "blocks_with_remaining_deficit": 1109,
+        "top_improved": [
+          {
+            "block_id": 2489,
+            "provision_original": 0.0,
+            "provision_scenario": 1.0,
+            "provision_change": 1.0,
+            "deficit_scenario": 0.0
+          },
+          {
+            "block_id": 2529,
+            "provision_original": 0.0,
+            "provision_scenario": 1.0,
+            "provision_change": 1.0,
+            "deficit_scenario": 0.0
+          },
+          {
+            "block_id": 2530,
+            "provision_original": 0.0,
+            "provision_scenario": 1.0,
+            "provision_change": 1.0,
+            "deficit_scenario": 0.0
+          },
+          {
+            "block_id": 2533,
+            "provision_original": 0.0,
+            "provision_scenario": 1.0,
+            "provision_change": 1.0,
+            "deficit_scenario": 0.0
+          },
+          {
+            "block_id": 2534,
+            "provision_original": 0.0,
+            "provision_scenario": 1.0,
+            "provision_change": 1.0,
+            "deficit_scenario": 0.0
+          },
+          {
+            "block_id": 2612,
+            "provision_original": 0.0,
+            "provision_scenario": 1.0,
+            "provision_change": 1.0,
+            "deficit_scenario": 0.0
+          },
+          {
+            "block_id": 2613,
+            "provision_original": 0.0,
+            "provision_scenario": 1.0,
+            "provision_change": 1.0,
+            "deficit_scenario": 0.0
+          },
+          {
+            "block_id": 2630,
+            "provision_original": 0.0,
+            "provision_scenario": 1.0,
+            "provision_change": 1.0,
+            "deficit_scenario": 0.0
+          },
+          {
+            "block_id": 2632,
+            "provision_original": 0.0,
+            "provision_scenario": 1.0,
+            "provision_change": 1.0,
+            "deficit_scenario": 0.0
+          },
+          {
+            "block_id": 2633,
+            "provision_original": 0.0,
+            "provision_scenario": 1.0,
+            "provision_change": 1.0,
+            "deficit_scenario": 0.0
+          },
+          {
+            "block_id": 2634,
+            "provision_original": 0.0,
+            "provision_scenario": 1.0,
+            "provision_change": 1.0,
+            "deficit_scenario": 0.0
+          },
+          {
+            "block_id": 2635,
+            "provision_original": 0.0,
+            "provision_scenario": 1.0,
+            "provision_change": 1.0,
+            "deficit_scenario": 0.0
+          },
+          {
+            "block_id": 2639,
+            "provision_original": 0.0,
+            "provision_scenario": 1.0,
+            "provision_change": 1.0,
+            "deficit_scenario": 0.0
+          },
+          {
+            "block_id": 2642,
+            "provision_original": 0.0,
+            "provision_scenario": 1.0,
+            "provision_change": 1.0,
+            "deficit_scenario": 0.0
+          },
+          {
+            "block_id": 2643,
+            "provision_original": 0.0,
+            "provision_scenario": 1.0,
+            "provision_change": 1.0,
+            "deficit_scenario": 0.0
+          }
+        ],
+        "top_remaining_deficit": [
+          {
+            "block_id": 2485,
+            "population": 558.031552812805,
+            "deficit_scenario": 6.0,
+            "provision_scenario": 0.0
+          },
+          {
+            "block_id": 30,
+            "population": 366.3243261807636,
+            "deficit_scenario": 4.0,
+            "provision_scenario": 0.0
+          },
+          {
+            "block_id": 224,
+            "population": 330.5527309585628,
+            "deficit_scenario": 3.0,
+            "provision_scenario": 0.0
+          },
+          {
+            "block_id": 4336,
+            "population": 188.7179150845393,
+            "deficit_scenario": 2.0,
+            "provision_scenario": 0.0
+          },
+          {
+            "block_id": 1486,
+            "population": 186.44392342738985,
+            "deficit_scenario": 2.0,
+            "provision_scenario": 0.0
+          },
+          {
+            "block_id": 689,
+            "population": 186.11291135936614,
+            "deficit_scenario": 2.0,
+            "provision_scenario": 0.0
+          },
+          {
+            "block_id": 90,
+            "population": 185.57866582671838,
+            "deficit_scenario": 2.0,
+            "provision_scenario": 0.0
+          },
+          {
+            "block_id": 640,
+            "population": 183.81659234302214,
+            "deficit_scenario": 2.0,
+            "provision_scenario": 0.0
+          },
+          {
+            "block_id": 177,
+            "population": 182.17526213309625,
+            "deficit_scenario": 2.0,
+            "provision_scenario": 0.0
+          },
+          {
+            "block_id": 657,
+            "population": 181.83163235397177,
+            "deficit_scenario": 2.0,
+            "provision_scenario": 0.0
+          },
+          {
+            "block_id": 1593,
+            "population": 181.34935891364853,
+            "deficit_scenario": 2.0,
+            "provision_scenario": 0.0
+          },
+          {
+            "block_id": 1603,
+            "population": 170.72675234117617,
+            "deficit_scenario": 2.0,
+            "provision_scenario": 0.0
+          },
+          {
+            "block_id": 386,
+            "population": 164.16279650899278,
+            "deficit_scenario": 2.0,
+            "provision_scenario": 0.0
+          },
+          {
+            "block_id": 219,
+            "population": 162.4378456935017,
+            "deficit_scenario": 2.0,
+            "provision_scenario": 0.0
+          },
+          {
+            "block_id": 1605,
+            "population": 161.902413924091,
+            "deficit_scenario": 2.0,
+            "provision_scenario": 0.0
+          }
+        ]
+      }
+    },
+    "C": {
+      "title": "Автоподбор одной больницы на 600 мест: квартал 321",
+      "reason": "Лучший результат автоподбора; всего 23 равноценных квартала.",
+      "hospitals": [
+        {
+          "block_id": 321,
+          "capacity": 600
+        }
+      ],
+      "summary": {
+        "baseline_deficit": 1546.0,
+        "baseline_provision_total": 0.7522435897435897,
+        "capacity_added": 600,
+        "capacity_added_by_block": {
+          "321": 600
+        },
+        "capacity_left": 42.0,
+        "deficit": 952.0,
+        "deficit_reduction": 594.0,
+        "deficit_reduction_share": 0.38421733505821476,
+        "provision_total": 0.8474358974358974,
+        "total_capacity": 5330.0,
+        "total_demand": 6240,
+        "total_demand_within": 5288.0,
+        "blocks_improved": 574,
+        "blocks_with_remaining_deficit": 897,
+        "top_improved": [
+          {
+            "block_id": 3,
+            "provision_original": 0.0,
+            "provision_scenario": 1.0,
+            "provision_change": 1.0,
+            "deficit_scenario": 0.0
+          },
+          {
+            "block_id": 4,
+            "provision_original": 0.0,
+            "provision_scenario": 1.0,
+            "provision_change": 1.0,
+            "deficit_scenario": 0.0
+          },
+          {
+            "block_id": 5,
+            "provision_original": 0.0,
+            "provision_scenario": 1.0,
+            "provision_change": 1.0,
+            "deficit_scenario": 0.0
+          },
+          {
+            "block_id": 7,
+            "provision_original": 0.0,
+            "provision_scenario": 1.0,
+            "provision_change": 1.0,
+            "deficit_scenario": 0.0
+          },
+          {
+            "block_id": 10,
+            "provision_original": 0.0,
+            "provision_scenario": 1.0,
+            "provision_change": 1.0,
+            "deficit_scenario": 0.0
+          },
+          {
+            "block_id": 11,
+            "provision_original": 0.0,
+            "provision_scenario": 1.0,
+            "provision_change": 1.0,
+            "deficit_scenario": 0.0
+          },
+          {
+            "block_id": 13,
+            "provision_original": 0.0,
+            "provision_scenario": 1.0,
+            "provision_change": 1.0,
+            "deficit_scenario": 0.0
+          },
+          {
+            "block_id": 16,
+            "provision_original": 0.0,
+            "provision_scenario": 1.0,
+            "provision_change": 1.0,
+            "deficit_scenario": 0.0
+          },
+          {
+            "block_id": 17,
+            "provision_original": 0.0,
+            "provision_scenario": 1.0,
+            "provision_change": 1.0,
+            "deficit_scenario": 0.0
+          },
+          {
+            "block_id": 19,
+            "provision_original": 0.0,
+            "provision_scenario": 1.0,
+            "provision_change": 1.0,
+            "deficit_scenario": 0.0
+          },
+          {
+            "block_id": 24,
+            "provision_original": 0.0,
+            "provision_scenario": 1.0,
+            "provision_change": 1.0,
+            "deficit_scenario": 0.0
+          },
+          {
+            "block_id": 25,
+            "provision_original": 0.0,
+            "provision_scenario": 1.0,
+            "provision_change": 1.0,
+            "deficit_scenario": 0.0
+          },
+          {
+            "block_id": 26,
+            "provision_original": 0.0,
+            "provision_scenario": 1.0,
+            "provision_change": 1.0,
+            "deficit_scenario": 0.0
+          },
+          {
+            "block_id": 27,
+            "provision_original": 0.0,
+            "provision_scenario": 1.0,
+            "provision_change": 1.0,
+            "deficit_scenario": 0.0
+          },
+          {
+            "block_id": 28,
+            "provision_original": 0.0,
+            "provision_scenario": 1.0,
+            "provision_change": 1.0,
+            "deficit_scenario": 0.0
+          }
+        ],
+        "top_remaining_deficit": [
+          {
+            "block_id": 4195,
+            "population": 1224.0681992012408,
+            "deficit_scenario": 12.0,
+            "provision_scenario": 0.0
+          },
+          {
+            "block_id": 3871,
+            "population": 1015.9061689765334,
+            "deficit_scenario": 10.0,
+            "provision_scenario": 0.0
+          },
+          {
+            "block_id": 2485,
+            "population": 558.031552812805,
+            "deficit_scenario": 6.0,
+            "provision_scenario": 0.0
+          },
+          {
+            "block_id": 4204,
+            "population": 476.6860292062611,
+            "deficit_scenario": 5.0,
+            "provision_scenario": 0.0
+          },
+          {
+            "block_id": 3554,
+            "population": 266.0746187267063,
+            "deficit_scenario": 3.0,
+            "provision_scenario": 0.0
+          },
+          {
+            "block_id": 3835,
+            "population": 221.1830515884748,
+            "deficit_scenario": 2.0,
+            "provision_scenario": 0.0
+          },
+          {
+            "block_id": 4308,
+            "population": 212.33700016280292,
+            "deficit_scenario": 2.0,
+            "provision_scenario": 0.0
+          },
+          {
+            "block_id": 3864,
+            "population": 191.73347619109782,
+            "deficit_scenario": 2.0,
+            "provision_scenario": 0.0
+          },
+          {
+            "block_id": 4336,
+            "population": 188.7179150845393,
+            "deficit_scenario": 2.0,
+            "provision_scenario": 0.0
+          },
+          {
+            "block_id": 1486,
+            "population": 186.44392342738985,
+            "deficit_scenario": 2.0,
+            "provision_scenario": 0.0
+          },
+          {
+            "block_id": 640,
+            "population": 183.81659234302214,
+            "deficit_scenario": 2.0,
+            "provision_scenario": 0.0
+          },
+          {
+            "block_id": 1593,
+            "population": 181.34935891364853,
+            "deficit_scenario": 2.0,
+            "provision_scenario": 0.0
+          },
+          {
+            "block_id": 3551,
+            "population": 179.25879380335502,
+            "deficit_scenario": 2.0,
+            "provision_scenario": 0.0
+          },
+          {
+            "block_id": 3562,
+            "population": 174.08513123402452,
+            "deficit_scenario": 2.0,
+            "provision_scenario": 0.0
+          },
+          {
+            "block_id": 1603,
+            "population": 170.72675234117617,
+            "deficit_scenario": 2.0,
+            "provision_scenario": 0.0
+          }
+        ]
+      }
+    }
+  },
+  "manual_match": {
+    "manual_a_blocks": [
+      3871
+    ],
+    "auto_best_blocks": [
+      321,
+      467,
+      468,
+      469,
+      470,
+      471,
+      472,
+      473,
+      474,
+      475,
+      477,
+      478,
+      482,
+      483,
+      484,
+      488,
+      489,
+      490,
+      494,
+      497,
+      499,
+      500,
+      518
+    ],
+    "manual_a_in_best": false,
+    "manual_a_reduction": 319.0,
+    "auto_best_reduction": 594,
+    "manual_c_reduction": 594.0,
+    "manual_c_matches_auto": true
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "generated_at": "2026-11-18T10:25:00.885993+00:00",
+  "service_type": "hospital",
+  "demand_per_1000": 9,
+  "accessibility_min": 60,
+  "blocks": 4441,
+  "matrix": {
+    "ok": true,
+    "shape": [
+      4441,
+      4441
+    ],
+    "raw_index_dtype": "int64",
+    "raw_columns_dtype": "int64",
+    "normalized_index_dtype": "int64",
+    "normalized_columns_dtype": "int64",
+    "index_equals_columns": true,
+    "block_ids_match": true,
+    "min_minutes": 0.0,
+    "max_minutes": 460.5
+  },
+  "saved_result": {
+    "total_demand": 6240,
+    "total_capacity": 4730.0,
+    "total_demand_within": 4694.0,
+    "total_deficit": 1546.0,
+    "total_provision": 0.7522435897435897
+  },
+  "checks": [
+    {
+      "name": "vectorized_vs_saved_provision_strong",
+      "max_abs_diff": 0.0,
+      "mismatched_blocks": 0,
+      "passed": true
+    },
+    {
+      "name": "vectorized_vs_saved_demand_within",
+      "max_abs_diff": 0.0,
+      "mismatched_blocks": 0,
+      "passed": true
+    },
+    {
+      "name": "vectorized_vs_saved_deficit",
+      "max_abs_diff": 0.0,
+      "mismatched_blocks": 0,
+      "passed": true
+    },
+    {
+      "name": "saved_csv_vs_blocks_indicators",
+      "max_abs_diff": 0.0,
+      "mismatched_blocks": 0,
+      "passed": true
+    }
+  ],
+  "blocksnet_original": {
+    "compared": true,
+    "provision_strong": {
+      "name": "vectorized_vs_blocksnet_provision_strong",
+      "max_abs_diff": 0.0,
+      "mismatched_blocks": 0,
+      "passed": true
+    },
+    "demand_within": {
+      "name": "vectorized_vs_blocksnet_demand_within",
+      "max_abs_diff": 0.0,
+      "mismatched_blocks": 0,
+      "passed": true
+    },
+    "deficit": {
+      "name": "vectorized_vs_blocksnet_deficit",
+      "max_abs_diff": 0.0,
+      "mismatched_blocks": 0,
+      "passed": true
+    }
+  },
+  "passed": true,
+  "note": "Проверка воспроизводит расчёт обеспеченности competitive_provision с параметрами hospital и сравнивает его с hospitals_provision.csv и полем hospital_provision_strong в blocks_indicators.geojson."
+}

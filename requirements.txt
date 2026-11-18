@@ -1,0 +1,10 @@
+blocksnet==1.0.0a9
+pandas==2.3.3
+geopandas==1.2.0
+numpy==2.2.6
+scipy==1.18.1
+flask==3.1.3
+pyarrow==19.0.1
+ortools==9.15.6755
+highspy==1.16.0
+gunicorn==23.0.0; sys_platform != "win32"

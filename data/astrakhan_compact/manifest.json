@@ -1,0 +1,21 @@
+{
+  "blocks": 4441,
+  "matrix_shape": [
+    4441,
+    4441
+  ],
+  "matrix_dtype": "float32",
+  "demand_per_1000": 9,
+  "accessibility_min": 60,
+  "files": {
+    "accessibility_matrix.npz": 39078322,
+    "blocks.parquet": 705360,
+    "boundaries.parquet": 28497,
+    "hospitals.parquet": 20754,
+    "hospitals_blocks.parquet": 705249,
+    "hospitals_provision.parquet": 25421,
+    "population.parquet": 733778,
+    "roads.parquet": 476872,
+    "water.parquet": 118801
+  }
+}
